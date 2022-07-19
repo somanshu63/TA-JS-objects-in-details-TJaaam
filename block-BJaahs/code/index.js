@@ -2,62 +2,49 @@ let title = 'Where is the capital of Jordan';
 let options = ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'];
 let correctAnswerIndex = 1;
 function isAnswerCorrect(index) {
-    if(index == correctAnswerIndex){
-        return true;
-    }else{
-        return false;
-    }
+    return index === correctAnswerIndex;
 }
 function getCorrectAnswer() {
-    return "Tashkent";
+    return options[correctAnswerIndex];
 }
 
-let object = {
+let question = {
     title: 'Where is the capital of Jordan',
     options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
     correctAnswerIndex: 1,
     isAnswerCorrect: function (index) {
-        if(index == correctAnswerIndex){
-            return true;
-        }else{
-            return false;
-        }
+        return index === question.correctAnswerIndex;
     },
     getCorrectAnswer: function () {
-    return "Tashkent";
+        return question.options[question.correctAnswerIndex];
     }
 }
 
-function createObject (title, arrOfOptions, index) {
-    let object = {};
-    object.title = title;
-    object.options = arrOfOptions;
-    object.correctAnswerIndex = index;
-    object.isAnswerCorrect = function (index) {
-        if(index == correctAnswerIndex){
-            return true;
-        }else{
-            return false;
-        }
+function createQuestion (title, options, index) {
+    let question = {};
+    question.title = title;
+    question.options = options;
+    question.correctAnswerIndex = index;
+    question.isAnswerCorrect = function (index) {
+        return index === question.correctAnswerIndex;
     };
-    object.getCorrectAnswer = function () {
-    return "Tashkent";
+    question.getCorrectAnswer = function () {
+        return question.options[question.correctAnswerIndex];
     };
+    return question;
 }
+const firstQuestion = createQuestion('Where is the capital of Jordan',['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'], 2);
 
-function createObject (title, arrOfOptions, index) {
-    let object = {};
-    object.title = title;
-    object.options = arrOfOptions;
-    object.correctAnswerIndex = index;
-    this.isAnswerCorrect = function (index) {
-        if(index == correctAnswerIndex){
-            return true;
-        }else{
-            return false;
-        }
+function createQuestion (title, options, index) {
+    let question = {};
+    question.title = title;
+    question.options = options;
+    question.correctAnswerIndex = index;
+    question.isAnswerCorrect = function (index) {
+        return index === this.correctAnswerIndex;
     };
-    this.getCorrectAnswer = function () {
-    return "Tashkent";
+    question.getCorrectAnswer = function () {
+        return this.options[this.correctAnswerIndex];
     };
+    return question;
 }
