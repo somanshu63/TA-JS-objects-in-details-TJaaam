@@ -27,6 +27,26 @@ let secondUser = createUser(
     24586,
     12
   );
+console.group("firstUser");
+console.log(firstUser.name);
+console.log(firstUser.id);
+console.log(firstUser.noOfProjects);
+console.log(firstUser.getProjects());
+console.log(firstUser.incrementProject());
+console.log(firstUser.decrementProject());
+console.groupEnd("firstUser");
+console.group("secondUser");
+console.log(secondUser.name);
+console.log(secondUser.id);
+console.log(secondUser.noOfProjects);
+console.log(secondUser.getProjects());
+console.log(secondUser.incrementProject());
+console.log(secondUser.decrementProject());
+console.groupEnd("secondUser");
+
+
+
+
 
 
 function createUser(name, id, noOfProjects) {
@@ -60,6 +80,22 @@ let secondUser = createUser(
     24586,
     12
   );
+  console.group("firstUser");
+  console.log(firstUser.name);
+  console.log(firstUser.id);
+  console.log(firstUser.noOfProjects);
+  console.log(firstUser.getProjects());
+  console.log(firstUser.incrementProject());
+  console.log(firstUser.decrementProject());
+  console.groupEnd("firstUser");
+  console.group("secondUser");
+  console.log(secondUser.name);
+  console.log(secondUser.id);
+  console.log(secondUser.noOfProjects);
+  console.log(secondUser.getProjects());
+  console.log(secondUser.incrementProject());
+  console.log(secondUser.decrementProject());
+  console.groupEnd("secondUser");
 
 
 function User(name, id, noOfProjects) {
@@ -91,6 +127,22 @@ let secondUser = new User(
     24586,
     12
   );
+console.group("firstUser");
+console.log(firstUser.name);
+console.log(firstUser.id);
+console.log(firstUser.noOfProjects);
+console.log(firstUser.getProjects());
+console.log(firstUser.incrementProject());
+console.log(firstUser.decrementProject());
+console.groupEnd("firstUser");
+console.group("secondUser");
+console.log(secondUser.name);
+console.log(secondUser.id);
+console.log(secondUser.noOfProjects);
+console.log(secondUser.getProjects());
+console.log(secondUser.incrementProject());
+console.log(secondUser.decrementProject());
+console.groupEnd("secondUser");
 
 
 class User {
@@ -123,3 +175,19 @@ let firstUser = new User(
     24586,
     12
   );
+  console.group("firstUser");
+console.log(firstUser.name);
+console.log(firstUser.id);
+console.log(firstUser.noOfProjects);
+console.log(firstUser.getProjects());
+console.log(firstUser.incrementProject());
+console.log(firstUser.decrementProject());
+console.groupEnd("firstUser");
+console.group("secondUser");
+console.log(secondUser.name);
+console.log(secondUser.id);
+console.log(secondUser.noOfProjects);
+console.log(secondUser.getProjects());
+console.log(secondUser.incrementProject());
+console.log(secondUser.decrementProject());
+console.groupEnd("secondUser");
