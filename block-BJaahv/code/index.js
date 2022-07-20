@@ -17,16 +17,9 @@ function createUser(name, id, noOfProjects) {
     };
     return user; 
 }
-let firstUser = createUser(
-    'sam',
-    25458,
-    1
-  );
-let secondUser = createUser(
-    'john',
-    24586,
-    12
-  );
+let firstUser = createUser('sam',25458,1);
+let secondUser = createUser('john',24586,12);
+
 console.group("firstUser");
 console.log(firstUser.name);
 console.log(firstUser.id);
@@ -70,16 +63,9 @@ let createMethods =  {
         return (this.noOfProjects -= 1);
     }
 }
-let firstUser = createUser(
-    'sam',
-    25458,
-    1
-  );
-let secondUser = createUser(
-    'john',
-    24586,
-    12
-  );
+let firstUser = createUser('sam',25458,1);
+let secondUser = createUser('john',24586,12);
+
   console.group("firstUser");
   console.log(firstUser.name);
   console.log(firstUser.id);
@@ -117,16 +103,9 @@ User.prototype = {
         return (this.noOfProjects -= 1);
     }
 }
-let firstUser = new User(
-    'sam',
-    25458,
-    1
-  );
-let secondUser = new User(
-    'john',
-    24586,
-    12
-  );
+let firstUser = new User('sam',25458,1);
+let secondUser = new User("john",24586,12);
+
 console.group("firstUser");
 console.log(firstUser.name);
 console.log(firstUser.id);
@@ -165,16 +144,9 @@ class User {
     }
 }
 
-let firstUser = new User(
-    'sam',
-    25458,
-    1
-  );
-  let secondUser = new User(
-    'john',
-    24586,
-    12
-  );
+let firstUser = new User('sam',25458,1);
+  let secondUser = new User('john',24586,12);
+  
   console.group("firstUser");
 console.log(firstUser.name);
 console.log(firstUser.id);
