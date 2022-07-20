@@ -35,7 +35,7 @@ class Square {
     }
     calcAres () {
         return (this.width * this.height);
-    }
+    } 
 }
 ```
 
@@ -122,7 +122,7 @@ s2.area();
 
 - Check the `isEqual` method and pass the two instance you created above.
 ```js
-isEqual(s1, s2);
+Square.isEqual(s1, s2);
 ```
 
 ## User Class
@@ -180,21 +180,21 @@ class User{
         this.firstName = firstName; 
         this.lastName = lastName;
     }
-    get getFullName() {
+    get fullName() {
         return `${this.firstName} ${this.lastName}`;
     }
-    set setFullName(fullName) {
+    set fullName(fullName) {
         if(fullName.length < 5){
             return `Full name should be more than 5 characters`;
         }
         else {
-            let fullName = fullName.split(" ");
-            this.firstName = fullName[0];
-            this.lastName = fullName[1]; 
+            let newFullName = fullName.split(" ");
+            this.firstName = newFullName[0];
+            this.lastName = newFullName[1]; 
         }
     }
     nameContains (str) {
-        if(this.firstName.includes(str)){
+        if(this.firstName.includes(str) && this.lastName.includes(str)){
             return true;
         }
         else{
@@ -213,17 +213,17 @@ let user2 = new User("kiara", "advan");
 
 - Check by using the `fullName` setter method with name bigger than 5 characters.
 ```js
-user1.setFullName("john kiara");
+user1.fullName = "john kiara";
 ```
 
 - Check by using the `fullName` setter method with name less than 5 characters.
 ```js
-user2.setFullName("joh");
+user2.fullName = "joh";
 ```
 
 - Check the `fullName` using getter
 ```js
-user2.getFullName();
+user2.fullName();
 ```
 
 - Check the `nameContains` method
