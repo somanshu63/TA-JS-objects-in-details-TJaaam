@@ -22,6 +22,11 @@ let personOne = createUser("John", 20);
 let personTwo = createUser("sami", 18);
 
 //4. Change the code inside `createUser` in such a way that the methods `sayHello` doesn't have to be in all object. Use the prototypal nature. (Hint Object.create())
+let createUserMethod = {
+    sayHello: function () {
+        alert(`welcome ${User.name}`);
+    }
+}
 function createUser(name, age) {
     let User = Object.create(createUserMethods);
     User.name = name;
@@ -31,11 +36,7 @@ function createUser(name, age) {
     }
     return User;
 }
-let createUserMethod = {
-    sayHello: function () {
-        alert(`welcome ${User.name}`);
-    }
-}
+
 // 5. Convert the `createUser` function into Pseudoclassical pattern of object creation. Use `F.prototype` to store the methods. `F.prototype` means storing the methods in prototype property of the function.
 function CreateUser(name, age) {
     this.name = name;
