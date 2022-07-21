@@ -212,7 +212,7 @@ let object = {
     console.log('this inside of outerFn double()');
     console.log(this);
     return this.data.map(function (item) {
-      console.log(this); // object
+      console.log(this); // window
       return item * 2;
     });
   },
