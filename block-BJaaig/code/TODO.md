@@ -29,25 +29,25 @@ function MainUser() {
 
 let userSayHello = user.sayHello;
 
-console.log(user.sayHello()); // output / error
-console.log(user2.sayHello()); // output / error
-console.log(user.sayHello.call(user2)); // output / error
-console.log(user.sayHello.call(user2, 'Hey')); // output / error
-console.log(user.sayHello.apply(user2, ['Hey'])); // output / error
-console.log(typeof user.sayHello.bind(user2)); // output / error
-console.log(user.sayHello.bind(user2)()); // output / error
-console.log(userSayHello()); // output / error
-console.log(typeof userSayHello.bind(user2)); // output / error
-console.log(userSayHello.bind(user2)()); // output / error
-console.log(user3.sayHello()); // output / error
-console.log(userSayHello.apply(user3)); // output / error
-console.log(userSayHello.call(user3)); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(new MainUser().sayHello()); // output / error
-console.log(new MainUser().sayHello.call(user2)); // output / error
-console.log(new MainUser().sayHello.call(user)); // output / error
+console.log(user.sayHello()); // Hello John
+console.log(user2.sayHello()); // Hello Arya
+console.log(user.sayHello.call(user2)); // Hello Arya
+console.log(user.sayHello.call(user2, 'Hey')); // Hey Arya user2 is merged with user by explicit binding
+console.log(user.sayHello.apply(user2, ['Hey'])); // Hey Arya user2 is merged with user by explicit binding
+console.log(typeof user.sayHello.bind(user2)); // function because you have to call the function again after binding as bind only bind the object but doesnt call provides the function reference
+console.log(user.sayHello.bind(user2)()); // Hello Arya as after bind it is also called so it provides up the output
+console.log(userSayHello()); // Hello undefined
+console.log(typeof userSayHello.bind(user2)); // function because you have to call the function again after binding as bind only bind the object but doesnt call provides the function reference
+console.log(userSayHello.bind(user2)()); //  Hello Arya as after bind it is also called so it provides up the output
+console.log(user3.sayHello()); // type error
+console.log(userSayHello.apply(user3)); // Hello Bran we passed the user3 data in usersayHello
+console.log(userSayHello.call(user3)); // Hello Bran we passed the user3 data in usersayHello
+console.log(typeof new MainUser()); // object as new keyword provides with the output of object type
+console.log(typeof new MainUser()); // object as new keyword provides with the output of object type
+console.log(new MainUser().sayHello()); // Hello Tyrion 
+console.log(new MainUser().sayHello.call(user2)); // Hello Arya as user 2 is passed in it
+console.log(new MainUser().sayHello.call(user)); // Hello John as user is passed in it
 console.log(
   new MainUser().sayHello.apply(user, ['Welcome!'])
-); // output / error
+); // Welcome! John because user is passed and welcome is passed in it
 ```
