@@ -66,14 +66,7 @@ Make sure it does not the changes the original array.
 
 // You code goes here
 Array.prototype.shuffle = function () {
-  let final = [];
-  for(let i = 0; i < this.length * 5; i++) {
-    let num = Math.floor(Math.random()*this.length);
-    if(final.includes(this[num]) == false){
-       final.push(this[num]);
-    }
-  }
-  return final;
+  return [...this].sort(() => Math.random() - 0.5);
 }
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(numbers.shuffle());
@@ -133,9 +126,14 @@ chunk will be the remaining elements. `length` should default to 1.
 
 // You code goes here
 Array.prototype.chunk = function (size = 1) {
-  return Array.from({ length: Math.ceil(this.length / size) }, (v, i) =>
-  this.slice(i * size, i * size + size)
-  );
+  let arr = [...this];
+  let final = [];
+  let len = Math.floor(this.length/size);
+  for (let i = 0; i <= len; i++) {
+    let chunk = arr.splice(0, size);
+    final.push(chunk);
+  }
+  return final.filter(elm => elm.length);
 }
 
 // Test to check the shuffle method (It will return different output every time you call)
