@@ -1,34 +1,33 @@
 class BookList{
     constructor() {
         this.BookList = [];
+        this.currentIndex = 0;
     }
-    add(Book) {
-        this.BookList.push(Book);
+    add(BookList = []) {
+        this.BookList = this.BookList.concat(BookList);
+        return this.BookList;
     }
     getCurrentBook() {
-        let currentIndex = this.BookList.findIndex(book => book.isRead == false);
-        return this.BookList[currentIndex];
+        return this.BookList[this.currentIndex];
     }
     getNextBook() {
-        let currentIndex = this.BookList.findIndex(book => book.isRead == false) + 1;
-        return this.BookList[currentIndex];
+        return this.BookList[this.currentIndex + 1];
     }
     getPrevBook() {
-        let currentIndex = this.BookList.findIndex(book => book.isRead == false) - 1;
-        return this.BookList[currentIndex];
+        return this.BookList[this.currentIndex - 1];
     }
     changeCurrentBook(index) {
-        let currentIndex = index;
+        this.currentIndex = index;
     }
 }
 
 class Book{
-    constructor(title, category, author, isRead = false, finishedDate){
+    constructor(title, category, author){
         this.title = title;
         this.category = category;
         this.author = author;
-        this.isRead = isRead;
-        this.finishedDate = finishedDate;
+        this.isRead = false;
+        this.finishedDate = null;
     }
     markBookAsRead() {
         this.isRead = true;
@@ -43,12 +42,8 @@ let book5 = new Book("Pinocchio", "novel", "Carlo Collodi");
 book1.markBookAsRead();
 book2.markBookAsRead();
 let bookList = new BookList();
-bookList.add(book1);
-bookList.add(book2);
-bookList.add(book3);
-bookList.add(book4);
-bookList.add(book5);
+bookList.add([book1, book2, book3, book4, book5]);
 console.log(bookList.getCurrentBook());
 console.log(bookList.getNextBook());
 console.log(bookList.getPrevBook());
-console.log(bookList.changeCurrentBook(4));
+console.log(bookList.changeCurrentBook());
