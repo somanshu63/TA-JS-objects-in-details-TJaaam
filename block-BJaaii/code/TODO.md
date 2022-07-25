@@ -30,39 +30,33 @@ Getter
 ```js
 class Stack{
     constructor() {
-        this.items = [];
+        this.stack = [];
     }
     push(value) {
-        this.items.push(value);
+        this.stack.push(value);
     }
     pop() {
-        return this.items.pop();
+        return this.stack.pop();
     } 
-    peek(value) {
-        if(Boolean(value) == true){
-            return this.items[value];
-        }
-        else if(Boolean(value) == false){
-            return this.items[length-1];
-        }
+    peek(index = this.stack.length-1) {
+        return this.stack[index];
     }
     reverse() {
-        return this.items.reverse();
+        return this.stack.reverse();
     }
     isEmpty() {
-        if(this.items.length == 0){
+        if(this.stack.length == 0){
             return true;
         } else {
             return false;
         }
     }
     displayStack() {
-        return this.items.join(" ");
+        return this.stack.join(" ");
     }
     get length() {
-        return this.items.length;
+        return this.stack.length;
     }
-
 }
 ```
 
@@ -107,36 +101,30 @@ Getter
 ```js
 class Queue{
     constructor() {
-        this.items = [];
+        this.queue = [];
     }
     enqueue(value) {
-        this.items.push(value);
+        this.queue.push(value);
     }
     dequeue() {
-        return this.items.pop();
+        return this.queue.splice(0, 1);
     } 
-    peek(value) {
-        if(Boolean(value) == true){
-            return this.items[value];
-        }
-        else if(Boolean(value) == false){
-            return this.items[0];
-        }
+    peek(index = 0) {
+        return this.queue[index];
     }
     isEmpty() {
-        if(this.items.length == 0){
+        if(this.queue.length == 0){
             return true;
         } else {
             return false;
         }
     }
     displayQueue() {
-        return this.items.join(" ");
+        return this.queue.join(" ");
     }
     get length() {
-        return this.items.length;
+        return this.queue.length;
     }
-
 }
 ```
 
